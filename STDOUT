@@ -1,0 +1,7 @@
+Feature: sign in feature
+
+  Scenario: Create New Account verification             [90m# src/test/resurces/features/login_automation.feature:5[0m
+    [32mGiven [0m[32mthe user click on sign in link[0m                [90m# login_automation.the_user_click_on_sign_in_link()[0m
+    [32mWhen [0m[32mthe user donot enter any data[0m                  [90m# login_automation.the_user_donot_enter_any_data()[0m
+    [32mAnd [0m[32mthe user click on create Account link[0m           [90m# login_automation.the_user_click_on_create_Account_link()[0m
+    [32mThen [0m[32m"[0m[32m[1m1.Invalid email address.[0m[32m" should be displayed[0m [90m# login_automation.should_be_displayed(String)[0m
