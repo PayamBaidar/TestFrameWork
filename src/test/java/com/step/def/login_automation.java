@@ -63,7 +63,7 @@ public class login_automation {
 		@Then("^the following error message displays \"([^\"]*)\"$")
 		public void the_following_error_message_displays(String arg1) throws Throwable {
 			boolean flag= login.authentication_error.isDisplayed();
-			Assert.assertFalse(flag);
+			Assert.assertTrue(flag);
 		}
 
 		

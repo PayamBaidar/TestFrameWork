@@ -1,7 +1,34 @@
-Feature: sign in feature
+Feature: 
 
-  Scenario: Create New Account verification             [90m# src/test/resurces/features/login_automation.feature:5[0m
-    [32mGiven [0m[32mthe user click on sign in link[0m                [90m# login_automation.the_user_click_on_sign_in_link()[0m
-    [32mWhen [0m[32mthe user donot enter any data[0m                  [90m# login_automation.the_user_donot_enter_any_data()[0m
-    [32mAnd [0m[32mthe user click on create Account link[0m           [90m# login_automation.the_user_click_on_create_Account_link()[0m
-    [32mThen [0m[32m"[0m[32m[1m1.Invalid email address.[0m[32m" should be displayed[0m [90m# login_automation.should_be_displayed(String)[0m
+  Background:                                                          # src/test/resurces/features/Register.feature:3
+    Given the user enter "http://automationpractice.com/index.php" url # Register_Steps.the_user_enter_url(String)
+
+  Scenario: -1: the user is succefully loged in                          # src/test/resurces/features/Register.feature:8
+    Given the user clicks on sign in link on the right corner of wibsite # Register_Steps.the_user_clicks_on_sign_in_link_on_the_right_corner_of_wibsite()
+    When the user enter valid email  in email address field              # Register_Steps.the_user_enter_valid_email_in_email_address_field(DataTable)
+    And the user enter valid password  in password field                 # Register_Steps.the_user_enter_valid_password_in_password_field(DataTable)
+    And the user click on sign in button                                 # login_automation.the_user_click_on_sign_in_button()
+    Then the user login succesfully and see "your logo" on left corner   # Register_Steps.the_user_login_succesfully_and_see_on_left_corner(String)
+
+  Background:                                                          # src/test/resurces/features/Register.feature:3
+    Given the user enter "http://automationpractice.com/index.php" url # Register_Steps.the_user_enter_url(String)
+
+  Scenario: -2: the user sign out after sign successfuly                 # src/test/resurces/features/Register.feature:21
+    Given the user clicks on sign in link on the right corner of wibsite # Register_Steps.the_user_clicks_on_sign_in_link_on_the_right_corner_of_wibsite()
+    When the user enter valid email  in email address field              # Register_Steps.the_user_enter_valid_email_in_email_address_field(DataTable)
+    And the user enter valid password  in password field                 # Register_Steps.the_user_enter_valid_password_in_password_field(DataTable)
+    And the user click on sign in button                                 # login_automation.the_user_click_on_sign_in_button()
+    And the user click on sign out button                                # Register_Steps.the_user_click_on_sign_out_button()
+    Then the user logout succesfully and see "creat an acount" on corner # Register_Steps.the_user_logout_succesfully_and_see_on_corner(String)
+
+  Background:                                                          # src/test/resurces/features/Register.feature:3
+    Given the user enter "http://automationpractice.com/index.php" url # Register_Steps.the_user_enter_url(String)
+
+  @smoke
+  Scenario: -3: the user sign out after sign successfuly                    # src/test/resurces/features/Register.feature:34
+    Given the user clicks on sign in link on the right corner of wibsite    # Register_Steps.the_user_clicks_on_sign_in_link_on_the_right_corner_of_wibsite()
+    When the user enter valid email  in email address field                 # Register_Steps.the_user_enter_valid_email_in_email_address_field(DataTable)
+    And the user enter valid password  in password field                    # Register_Steps.the_user_enter_valid_password_in_password_field(DataTable)
+    And the user click on sign in button                                    # login_automation.the_user_click_on_sign_in_button()
+    And the user click on contact us button                                 # Register_Steps.the_user_click_on_contact_us_button()
+    Then the user logout succesfully and "customerservicecontactus" display # Register_Steps.the_user_logout_succesfully_and_display(String)

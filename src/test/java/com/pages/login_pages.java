@@ -30,6 +30,9 @@ public class login_pages extends TestBase{
 	@FindBy(xpath="//li[contains(.,'Invalid email address.')]")
 	public WebElement errormessage_createaccount;
 	
+	@FindBy(xpath = "//li[contains(.,'1. An email address required.')]")
+	public WebElement authentication_error1;
+	
 	@FindBy(xpath = "//li[contains(.,'Authentication failed.')]")
 	public WebElement authentication_error;
 	
@@ -62,6 +65,18 @@ public class login_pages extends TestBase{
 	
 	@FindBy(xpath = "//input[@id='city']")
 	public WebElement city;
+	
+	@FindBy(xpath = "//img[contains(@src,'http://automationpractice.com/img/logo.jpg')]")
+	public WebElement logo;
+	
+	@FindBy(xpath = "//a[contains(text(),'Contact us')]")
+	public WebElement contacts_as;
+	
+	@FindBy(xpath = "//a[contains(text(),'Sign out')]")
+	public WebElement signout;
+	
+	@FindBy(xpath = "//h1[contains(text(),'Customer service - Contact us')]")
+	public WebElement custservicecontacus;
 	
 	
 	
